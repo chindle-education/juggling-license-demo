@@ -1,18 +1,30 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "Accessibility statement" %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">{{ serviceName }}</h1>
-    <p>To apply for a juggling license you must tell us about your juggling abilities.</p>
-   
-    {{ govukButton({
-      text: "Start now",
-      href: "/new/email-address",
-      isStartButton: "true"
-    }) }}
-  </div>
+
+{% set accessibilityContent %}
+# {{pageName}}
+
+how-to-use-layouts
+
+## h2
+- bullet 1
+- bullet 2
+
+###
+
+1. Item 1
+
+{% endset %}
+
+{{ accessibilityContent | govukMarkdown ({ headingsStartWith: 'l' })}}
+
+     </div>
 </div>
 
 {% endblock %}
